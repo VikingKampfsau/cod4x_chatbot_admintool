@@ -1,0 +1,129 @@
+// DO NOT CHANGE THIS FILE UNLESS YOU KNOW WHAT YOU ARE DOING!
+
+// This config file contains default commands.
+// Lines starting with // will be ignored.
+// Available placeholders:
+// <NO_ARG>
+// <ARG>
+// <ARG_EXECUTOR_ID>
+// <ARG_EXECUTOR_GUID>
+// <ARG_EXECUTOR_NAME>
+// <ARG_TARGET_PLAYER_ID>
+// <ARG_TARGET_PLAYER_GUID>
+// <ARG_TARGET_PLAYER_NAME>
+
+[commands]
+// define commands here.
+// the command name requires at least 3 characters!
+admins = <NO_ARGS>
+aliases = <ARG>
+ban = <ARG_TARGET_PLAYER_GUID> <ARG>
+find = <ARG>
+guid = <ARG>
+help = <ARG>
+iamgod = <NO_ARG>
+ipban = <ARG_TARGET_PLAYER_GUID> <ARG>
+ipaliases = <ARG>
+kick = <ARG_TARGET_PLAYER_GUID> <ARG>
+leveltest = <ARG>
+lookup = <ARG>
+map = map <ARG>
+myguid = tell <ARG_EXECUTOR_ID> Your GUID: ^2<ARG_EXECUTOR_GUID>
+penalties = <ARG>
+whisper = tell <ARG_TARGET_PLAYER_ID> <ARG_EXECUTOR_NAME>: <ARG>
+putgroup = <ARG_TARGET_PLAYER_GUID> <ARG>
+rcon = <ARG>
+restart = map_restart
+rules = <NO_ARGS>
+screenshot = getss <ARG_TARGET_PLAYER_ID>
+seen = <ARG>
+tempban = <ARG_TARGET_PLAYER_GUID> <ARG>
+unban = <ARG_TARGET_PLAYER_GUID>
+ungroup = <ARG_TARGET_PLAYER_GUID>
+warn = <ARG_TARGET_PLAYER_GUID> <ARG>
+warnclear = <ARG_TARGET_PLAYER_GUID>
+warnings = <ARG_TARGET_PLAYER_GUID>
+warnremove = <ARG_TARGET_PLAYER_GUID>
+
+[power]
+// the required admin rank to execute the command.
+// if not provided the command is available for all players.
+admins = 0
+aliases = 20
+ban = 40
+find = 60
+guid = 80
+help = 0
+iamgod = 0
+ipban = 80
+ipaliases = 80
+kick = 20
+leveltest = 20
+lookup = 60
+map = 40
+myguid = 0
+whisper = 20
+putgroup = 80
+rcon = 100
+rules = 0
+screenshot = 60
+seen = 20
+tempban = 40
+unban = 80
+ungroup = 80
+warn = 20
+warnclear = 20
+warnings = 20
+warnremove = 20
+
+[help]
+// a short description displayed when the help command is executed.
+admins = ^2admins ^7- lists all the online admins.
+aliases = ^2aliases ^3<name> ^7- list a players aliases.
+ban = ^2ban ^3<name> <reason> ^7- ban a player.
+find = ^2find ^3<name> ^7- display a users mysql ID.
+guid = ^2guid ^3<name> ^7- display the (G)UID of a player.
+help = ^2help ^3<command> ^7- get info on how to use a command.
+iamgod = register yourself as master admin.
+ipaliases = ^2ipban ^3<name> ^7- show ips from older connections.
+ipban = ^2ipban ^3<name> ^7- ban a player by ip.
+kick = ^2kick ^3<name> <reason> ^7- kick a player.
+leveltest = ^2leveltest ^3<name>^3 ^7- display the group of a player.
+lookup = ^2lookup ^3<name> ^7- lookup a player in the database.
+map = ^2map ^3<map> ^7- switch current map.
+myguid = ^2myguid ^7- displays your own (G)UID.
+penalties = ^2 ^3<name> ^7- list all penalties the client ever received.
+whisper = ^2pm ^3<name> ^7- send a private to the player with the matching name.
+putgroup = ^2putgroup ^3<name> <group> ^7- add a player to a group.
+rcon = ^2rcon ^3<command> ^7- execute a rcon command.
+restart = ^2restart ^7- restart the current map.
+rules = ^2rules ^7- print out the server rules.
+screenshot = ^2screenshot ^3<name> ^7- capture an image of the players game view.
+seen = ^2seen ^3<name> ^7- when was a player last seen?
+tempban = ^2tempban ^3<name> <reason> ^7- tempban a player.
+unban = ^2unban ^3<name/id> ^7- unban a player.
+ungroup = ^2ungroup ^3<name> <group> ^7- remove a player from a group.
+warn = ^2warn ^3<name> <warning> ^7- warn a player.
+warnclear = ^2warnclear ^3<name> ^7- remove all warnings from a player.
+warnings = ^2warnings ^3<name> ^7- display how many warning points a play has.
+warnremove = ^2warnremove ^3<name> ^7- remove a users last warning.
+
+[alias]
+// define one alias/shortcut per command here.
+// the alias/shortcut requires at least 3 characters!
+admins = online
+aliases = alias
+ban = permban
+ipaliases = ipalias
+leveltest = lvl
+lookup = lup
+penalties = pen
+whisper = whisp
+putgroup = add
+rules = rule
+screenshot = screen
+tempban = tmp
+unban = uban
+ungroup = ungrp
+warnclear = wclr
+warnremove = wrem

@@ -1,0 +1,30 @@
+// This config file allows you to easily define new commands.
+// Lines starting with // will be ignored.
+// Available placeholders:
+// <NO_ARG>
+// <ARG>
+// <ARG_EXECUTOR_ID>
+// <ARG_EXECUTOR_GUID>
+// <ARG_EXECUTOR_NAME>
+// <ARG_TARGET_PLAYER_ID>
+// <ARG_TARGET_PLAYER_GUID>
+// <ARG_TARGET_PLAYER_NAME>
+
+[commands]
+// define your new commands here.
+// the command name requires at least 3 characters!
+
+
+[power]
+// the required admin rank to execute the command.
+// if not provided the command is available for all players.
+
+
+[help]
+// a short description displayed when the help command is executed.
+
+
+[alias]
+// define one alias/shortcut per command here.
+// the alias/shortcut requires at least 3 characters!
+

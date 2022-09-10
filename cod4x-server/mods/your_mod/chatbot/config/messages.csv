@@ -1,0 +1,21 @@
+// This config file allows you to easily define messages which are shown in server chat.
+// It is a good way to constantly print rules, ads or other important messages.
+// Lines starting with // will be ignored.
+
+[settings]
+//delay between messages (in seconds)
+delay = 30
+
+[messages]
+//messages which are shown in server chat.
+//a new line starts a new message
+^3Message ^11: ^7'Chatbot' v1.0 by Viking!
+^3Message ^12: ^7'Chatbot' Site: github.com/VikingKampfsau/cod4x_chatbot_admintool
+^3Message ^13: ^7Message 3
+
+[rules]
+//messages print out when the 'rules' command was executed
+//a new line starts a new message
+^3Rule ^11: ^7Text of rule 1
+^3Rule ^12: ^7Text of rule 2
+^3Rule ^13:	^7Text of rule 3

@@ -70,7 +70,7 @@ importAdditionalFunctionsFromFile(filename)
 		line = StrRepl(line, "\n", "");
 		line = trim(line);
 		
-		if(line == "[commands]" || line == "[power]" || line == "[help]" || line == "[alias]")
+		if(line == "[settings]" || line == "[commands]" || line == "[power]" || line == "[help]" || line == "[alias]")
 		{
 			section = line;
 			continue;
@@ -116,6 +116,8 @@ importAdditionalFunctionsFromFile(filename)
 				if(isDefined(entryNo))
 					customCmds[entryNo].alias = parm;
 			}
+			else if(section == "[settings]")
+				level.chatbotSetting[trim(line[0])] = trim(line[1]);
 		}
 	}
 
@@ -667,9 +669,19 @@ writeToMySqlDatabase(command, arguments, executor)
 						updateMySqlEntries("penalties", "active = '0'", "type = 'Warning' AND active = '1' AND client_id = '" + clientID[0]["id"] + "'");
 					
 						victim = findPlayerInServer(clientID[0]["name"], clientID[0]["guid"]);
-						
-						if(isDefined(victim) && isPlayer(victim))
-							exec("clientkick " + victim getEntityNumber() + " " + reason);
+					
+						if(isDefined(level.chatbotSetting["maxwarntempban"]) && int(level.chatbotSetting["maxwarntempban"]) > 0)
+						{
+							addMySqlEntry("penalties", "type, client_id, admin_id, duration, active, reason, time_add, time_expire", "'TempBan', '" + clientID[0]["id"] + "', '" + adminID[0]["id"] + "', '" + int(int(level.chatbotSetting["maxwarntempban"])*60) + "', '1', '" + reason + "', '" + timeStamp + "', '" + int(timeStamp+int(level.chatbotSetting["maxwarntempban"])*60) + "'");
+
+							if(isDefined(victim) && isPlayer(victim))
+								exec("clientkick " + victim getEntityNumber() + " ^1Tempban^7: " + reason + " ^7(^1Expires: " + TimeToString(int(timeStamp+int(level.chatbotSetting["maxwarntempban"])*60), 0, "%d.%m.%Y %H:%M") + "^7)");
+						}
+						else
+						{
+							if(isDefined(victim) && isPlayer(victim))
+								exec("clientkick " + victim getEntityNumber() + " " + reason);
+						}
 					}
 				}
 			}

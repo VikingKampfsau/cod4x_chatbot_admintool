@@ -42,6 +42,10 @@ In case you run a mod with modified '_globallogic.gsc' and/or '_callbacksetup.gs
 
 Add the dvars from 'codserver.cfg' to your server config file and change them to allow the server to connect to the database.<br/>
 Also modify the config files found in 'chatbot\config\' as you desire.<br/>
+Start your server.<br/>
+
+**The first player using the iamgod command will receive the master admin level!**
+**It's recommended to setup a server password until the role is taken.
 
 ## Support
 For bug reports and issues, please visit the "Issues" tab at the top.<br/>

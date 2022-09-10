@@ -12,6 +12,11 @@
 // <ARG_TARGET_PLAYER_GUID>
 // <ARG_TARGET_PLAYER_NAME>
 
+[settings]
+//time in minutes of the tempban when a player has 3 warnings
+//0 = just a kick
+maxwarntempban = 5
+
 [commands]
 // define commands here.
 // the command name requires at least 3 characters!

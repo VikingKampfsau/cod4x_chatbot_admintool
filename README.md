@@ -34,7 +34,9 @@ Normal Player Commands:
 
 Install cod4x and add the required plugins to it.<br/>
 Copy the files within the example mod folder to your mod folder<br/>
-Create a new mysql database and import the empty example file from 'chatbot\config\mysql'.
+Create a new mysql database and import the empty example file from 'chatbot\config\mysql'.<br/>
+
+In case you run a mod with modified '_globallogic.gsc' and/or '_callbacksetup.gsc' then compare the files and add the 'chatbot' parts to your source.<br/>
 
 ## Configuration
 

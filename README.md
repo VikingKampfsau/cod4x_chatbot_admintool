@@ -47,6 +47,9 @@ Start your server.<br/>
 **The first player using the iamgod command will receive the master admin level!**
 **It's recommended to setup a server password until the role is taken.
 
+Detailed documentation:
+https://github.com/VikingKampfsau/cod4x_chatbot_admintool/blob/main/SETUP.MD
+
 ## Support
 For bug reports and issues, please visit the "Issues" tab at the top.<br/>
 First look through the issues, maybe your problem has already been reported.<br/>

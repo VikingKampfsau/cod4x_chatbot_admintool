@@ -44,10 +44,10 @@ Add the dvars from 'codserver.cfg' to your server config file and change them to
 Also modify the config files found in 'chatbot\config\' as you desire.<br/>
 Start your server.<br/>
 
-**The first player using the iamgod command will receive the master admin level!**
+**The first player using the iamgod command will receive the master admin level!**<br/>
 **It's recommended to setup a server password until the role is taken.
 
-Detailed documentation:
+Detailed documentation:<br/>
 https://github.com/VikingKampfsau/cod4x_chatbot_admintool/blob/main/SETUP.MD
 
 ## Support
@@ -60,5 +60,5 @@ If not, feel free to open a new issue.<br/>
 However, for any kind of question, feel free to visit our discord server at https://discord.gg/wDV8Eeu!
 
 ## Credits:
-MySQL Plugin for CoD4X by T-Maxxx:
+MySQL Plugin for CoD4X by T-Maxxx:<br/>
 https://github.com/callofduty4x/mysql

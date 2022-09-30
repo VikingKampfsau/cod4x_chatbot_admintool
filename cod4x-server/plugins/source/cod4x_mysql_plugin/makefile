@@ -31,35 +31,30 @@ C_OBJECTS=$(patsubst %.c,obj/%.o,$(C_MODULES))
 CPP_OBJECTS=$(patsubst %.cpp,obj/%.o,$(CPP_MODULES))
 OBJECTS=$(C_OBJECTS) $(CPP_OBJECTS)
 
-TARGET_OS = $(shell $(CC) -dumpmachine)
-
-ifeq      ($(TARGET_OS),mingw32)
+ifeq ($(OS),Windows_NT)
 INCLUDEDIR=$(INCLUDEDIR_WIN32)
 ADDITIONALLIBS=$(ADDITIONALLIBS_WIN32)
-else ifeq ($(TARGET_OS),cygwin)
 else
 CFLAGS += -fPIC
 INCLUDEDIR=$(INCLUDEDIR_UNIX)
 ADDITIONALLIBS=$(ADDITIONALLIBS_UNIX)
 endif
 
-
 ############
 # Recipies #
 ############
-ifeq      ($(TARGET_OS),mingw32)
+ifeq ($(OS),Windows_NT)
 all: win32
 else
 all: unix
 endif
-	@echo Done
-
+	@echo Clean done
 
 obj/%.o: %.cpp
 	@echo $(CC)    "$^ -> $@"
 	@$(CC) $(CFLAGS) $(INCLUDEDIR) -o $@ -c $<
 
-ifeq      ($(TARGET_OS),mingw32)
+ifeq ($(OS),Windows_NT)
 clean: clean_win32
 else
 clean: clean_unix

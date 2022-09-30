@@ -4,7 +4,7 @@
 #include "MySQLPlugin.hpp"
 #include "ScriptFunctions.hpp"
 
-/*Viking: addition for chatbot */
+/*Viking: addition for chatbot*/
 short ShortSwap (short l)
 {
 	byte    b1,b2;
@@ -25,7 +25,7 @@ void getPlayerIP(scr_entref_t entNum)
   // Object check
   gentity_t* entity = Plugin_GetGentityForEntityNum(entNum);
   
-  if(strcmp("player", SL_ConvertToString(entity->classname)))
+  if(strcmp("player", Plugin_SL_ConvertToString(entity->classname)))
     Plugin_Scr_ObjectError("entity is not a player.");
   
   char address[128];
@@ -54,15 +54,19 @@ void removeAddedScriptCommand()
     Plugin_Scr_Error("Usage: removeScriptCommand(<cmd name>);");
 
   char *cmd;
-  int result;
-  
   cmd = Plugin_Scr_GetString(0);
+  
+  /*
+  int result;
   result = Cmd_RemoveCommand(cmd);
   
   if(result == qtrue)
     Plugin_Printf("Removed script command '%s' \n", cmd);
   //else
   //  Plugin_Printf("Could not remove script command '%s' - did it exist?\n", cmd);
+  */
+
+  Plugin_RemoveCommand(cmd);
 }
 /*Viking: end of addition for chatbot */
 
@@ -113,10 +117,10 @@ int CMySQLPlugin::OnInit()
     /* MySQL-custom */
     Plugin_ScrAddFunction("mysql_fetch_rows", Scr_MySQL_Fetch_Rows_f);
 
-    /*Viking: addition for chatbot */
+    /*Viking: addition for chatbot*/
     Plugin_ScrAddMethod("getPlayerIP", &getPlayerIP);
     Plugin_ScrAddFunction("removeScriptCommand", &removeAddedScriptCommand);
-    /*Viking: end of addition for chatbot */
+    /*Viking: end of addition for chatbot*/
 
     return 0;
 }
@@ -520,16 +524,16 @@ void CMySQLPlugin::OnInfoRequest(pluginInfo_t *Info_)
     Info_->pluginVersion.minor = getMinorVersion();
 
     const char *const name = getName();
-    strncpy(Info_->fullName, name, strlen(name));
+    strncpy(Info_->fullName, name, strlen(Info_->fullName));
 
     const char *const shortDescription = getShortDescription();
-    strncpy(Info_->shortDescription, shortDescription, strlen(shortDescription));
+    strncpy(Info_->shortDescription, shortDescription, strlen(Info_->shortDescription));
 
     char longDescription[1024] = {'\0'};
     sprintf(longDescription, getDescription(), mysql_get_client_version());
     longDescription[sizeof(longDescription) - 1] = '\0';
 
-    strncpy(Info_->longDescription, longDescription, sizeof(longDescription));
+    strncpy(Info_->longDescription, longDescription, sizeof(Info_->longDescription));
 }
 /////////////////////////////////////////////////////////////////////////////////
 const char *const CMySQLPlugin::getName()

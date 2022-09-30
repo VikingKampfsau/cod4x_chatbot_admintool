@@ -10,13 +10,6 @@
     #endif
 //}
 
-/*Viking: addition for chatbot */
-extern "C" {
-  char* SL_ConvertToString(unsigned int index);
-  bool Cmd_RemoveCommand(const char *cmd_name);
-}
-/*Viking: end of addition for chatbot */
-
 #define MYSQL_CONNECTION_COUNT 4
 
 class CMySQLPlugin

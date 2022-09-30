@@ -23,15 +23,17 @@ For safety reasons create a new user that has full permissions on this database.
 
 Import the example database 'empty_db.sql' of chatbot which can be found in 'cod4x_chatbot_admintool\cod4x-server\mods\your_mod\chatbot\config\mysql'.
 
-Either use the phpmyadmin import feature or the linux shell command<br/>
+Either use the phpmyadmin import feature or the shell command<br/>
 ```mysql -u root -p <mysql password> <database name> empty_db.sql```
 
 ## Phase 3: Preparing the CoD4X environment
 
-Copy the CoD4X plugin 'libcod4x_mysql.so' from 'cod4x_chatbot_admintool\cod4x-server\plugins' to the plugins folder of your CoD4X server.<br/>
+Copy the CoD4X plugin 'libcod4x_mysql.so' (linux) or 'libcod4x_mysql.dll' (windows) from 'cod4x_chatbot_admintool\cod4x-server\plugins' to the plugins folder of your CoD4X server.<br/>
 If folder does not exist yet, then create it in your CoD4X server's root folder.<br/>
 To load the plugin add this to your server config:<br/>
 ```loadplugin libcod4x_mysql```
+
+On windows servers you also have to copy the mysql library 'cod4x_chatbot_admintool\cod4x-server\plugins\source\cod4x_mysql_plugin\mysql\windows\lib\libmysql.dll' to your CoD4X server's root folder.
 
 ## Phase 4: Setting up Chatbot's config files
 
